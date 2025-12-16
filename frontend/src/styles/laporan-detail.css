@@ -1,0 +1,628 @@
+/* Laporan Detail Page Styling */
+
+.laporan-detail-page {
+  min-height: 100vh;
+  background-color: white;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header with back button */
+.laporan-detail-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.laporan-detail-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  margin-left: -10px;
+}
+
+.laporan-detail-back:hover {
+  background-color: #f0f0f0;
+  transform: translateX(-2px);
+}
+
+.laporan-detail-back:active {
+  transform: translateX(-1px);
+}
+
+/* Main container - 2 column layout */
+.laporan-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  background: white;
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+}
+
+/* Left column - data content */
+.laporan-detail-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right column - image and actions */
+.laporan-detail-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Image section */
+.laporan-detail-image-section {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 0;
+}
+
+.laporan-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.laporan-detail-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+  color: #999;
+}
+
+/* Metadata bar */
+.laporan-detail-metadata-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata-label {
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.metadata-value {
+  font-size: 14px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.metadata-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.metadata-status.status-aktif {
+  background: #dbeafe;
+  color: #0369a1;
+}
+
+.metadata-status.status-selesai {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.metadata-status.status-dihapus {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Title and reporter section */
+.laporan-detail-title-section {
+  margin-bottom: 20px;
+}
+
+.laporan-detail-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.laporan-detail-reporter {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.reporter-name {
+  color: #d97706;
+  font-weight: 600;
+}
+
+/* Description section */
+.laporan-detail-description {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.laporan-detail-description h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}
+
+.laporan-detail-description p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* Details grid */
+.laporan-detail-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.detail-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 14px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+/* Contact info section */
+.laporan-detail-contact-info {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.laporan-detail-contact-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-label {
+  color: #999;
+  font-weight: 500;
+}
+
+.contact-value {
+  color: #1a1a1a;
+  font-weight: 500;
+  word-break: break-word;
+  text-align: right;
+  max-width: 50%;
+}
+
+/* Coordinates section */
+.laporan-detail-coordinates {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.coordinates-label {
+  color: #999;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.coordinates-value {
+  color: #1a1a1a;
+  margin: 0;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* Action buttons section - vertical layout in right column */
+.laporan-detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  position: static;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  z-index: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px;
+  border: 2px solid #e5e5e5;
+  background: white;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-direction: row;
+  border-radius: 10px;
+  min-height: auto;
+  white-space: nowrap;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-btn:not(:disabled):hover {
+  border-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-btn {
+  color: #25d366;
+  border-color: #25d366;
+}
+
+.whatsapp-btn:not(:disabled):hover {
+  background: #f0f8f3;
+  border-color: #25d366;
+}
+
+.email-btn {
+  color: #d97706;
+  border-color: #d97706;
+}
+
+.email-btn:not(:disabled):hover {
+  background: #fffbf0;
+  border-color: #d97706;
+}
+
+.share-btn {
+  color: #666;
+  border-color: #d0d0d0;
+}
+
+.share-btn:not(:disabled):hover {
+  background: #f9f9f9;
+  border-color: #999;
+}
+
+/* Loading state */
+.laporan-detail-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+}
+
+.laporan-detail-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e5e5;
+  border-top-color: #d97706;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.laporan-detail-loading p {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Error state */
+.laporan-detail-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+.laporan-detail-error h2 {
+  font-size: 20px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.laporan-detail-error p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.laporan-detail-error .btn {
+  margin-top: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .laporan-detail-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .laporan-detail-right {
+    flex-direction: row;
+  }
+
+  .laporan-detail-image-section {
+    flex: 1;
+    height: 300px;
+  }
+
+  .laporan-detail-actions {
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .laporan-detail-container {
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .laporan-detail-right {
+    flex-direction: column;
+  }
+
+  .laporan-detail-image-section {
+    height: 250px;
+    margin-bottom: 0;
+  }
+
+  .laporan-detail-title {
+    font-size: 22px;
+  }
+
+  .action-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+    gap: 8px;
+    min-height: auto;
+  }
+
+  .action-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .laporan-detail-actions {
+    gap: 10px;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .laporan-detail-header {
+    padding: 12px 16px;
+  }
+
+  .laporan-detail-container {
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 0;
+    margin: 0;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .laporan-detail-left,
+  .laporan-detail-right {
+    width: 100%;
+  }
+
+  .laporan-detail-image-section {
+    height: 200px;
+    margin-bottom: 0;
+    border-radius: 8px;
+  }
+
+  .laporan-detail-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .laporan-detail-reporter {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .laporan-detail-metadata-bar {
+    gap: 8px;
+    padding: 10px;
+    margin-bottom: 16px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metadata-label,
+  .metadata-value {
+    font-size: 12px;
+  }
+
+  .metadata-item {
+    font-size: 12px;
+  }
+
+  .laporan-detail-details {
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+
+  .detail-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+
+  .detail-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .detail-content {
+    gap: 1px;
+  }
+
+  .laporan-detail-contact-info {
+    margin-bottom: 16px;
+  }
+
+  .laporan-detail-contact-info h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .contact-item {
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .laporan-detail-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .action-btn {
+    padding: 12px 14px;
+    font-size: 13px;
+    min-height: auto;
+    gap: 8px;
+    border-width: 2px;
+    border-radius: 8px;
+    flex-direction: row;
+  }
+
+  .action-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .action-btn span {
+    display: inline;
+  }
+}

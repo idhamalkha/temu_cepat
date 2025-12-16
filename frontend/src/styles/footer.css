@@ -1,0 +1,258 @@
+/* Footer Popup Styling */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: overlayFadeIn 0.3s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.popup-overlay.closing {
+  animation: overlayFadeOut 0.3s ease-in forwards;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+}
+
+/* Popup Container */
+.popup-container {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 35px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: popupSlideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (max-width: 768px) {
+  .popup-container {
+    padding: 32px 28px;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-container {
+    padding: 24px 20px;
+    max-width: calc(100% - 32px);
+    border-radius: 8px;
+  }
+}
+
+.popup-container.closing {
+  animation: popupSlideOut 0.3s ease-in forwards;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes popupSlideOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+}
+
+/* Close Button */
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.popup-close:hover {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* Popup Content */
+.popup-content {
+  text-align: center;
+}
+
+.popup-content h2 {
+  font-family: 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: normal;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .popup-content h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup-content h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}
+
+.popup-content p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .popup-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+}
+
+.popup-content p:last-child {
+  margin-bottom: 0;
+}
+
+.popup-subtitle {
+  font-size: 14px;
+  color: #d97706;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .popup-overlay {
+    padding: 20px;
+  }
+
+  .popup-container {
+    padding: 36px 32px;
+  }
+
+  .popup-close {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup-overlay {
+    padding: 16px;
+  }
+
+  .popup-container {
+    padding: 32px 28px;
+    max-width: 380px;
+    border-radius: 12px;
+  }
+
+  .popup-close {
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .popup-subtitle {
+    font-size: 13px;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-overlay {
+    padding: 12px;
+  }
+
+  .popup-container {
+    padding: 24px 20px;
+    max-width: calc(100% - 24px);
+    border-radius: 8px;
+  }
+
+  .popup-close {
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    padding: 3px;
+  }
+
+  .popup-subtitle {
+    font-size: 12px;
+    margin-top: 16px;
+  }
+
+  .popup-content p:last-child {
+    margin-bottom: 0;
+  }
+}

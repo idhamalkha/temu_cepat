@@ -1,0 +1,253 @@
+/* Report Card Styles - Instagram-like Design */
+
+.report-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.report-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Header */
+.report-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.report-card-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.report-card-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+}
+
+.report-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.report-card-username {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+  margin: 0;
+}
+
+.report-card-location {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.report-card-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Image */
+.report-card-image {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.report-card-image-placeholder {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Actions */
+.report-card-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.report-card-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 20px;
+}
+
+.report-card-action-btn:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.report-card-action-btn.active {
+  color: #ef4444;
+}
+
+.report-card-action-bookmark {
+  margin-left: auto;
+}
+
+.report-card-action-bookmark:hover {
+  color: #1f2937;
+}
+
+/* Stats */
+.report-card-stats {
+  display: flex;
+  gap: 24px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 13px;
+}
+
+.report-card-likes,
+.report-card-views {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.report-card-stat-count {
+  font-weight: 700;
+  color: #111827;
+}
+
+.report-card-stat-label {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* Content */
+.report-card-content {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.report-card-title {
+  font-size: 14px;
+  color: #111827;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.report-card-bold {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.report-card-description {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.report-card-category {
+  font-size: 12px;
+  color: #667eea;
+  margin: 0;
+  font-weight: 500;
+}
+
+.report-card-hashtag {
+  color: #667eea;
+}
+
+/* Footer */
+.report-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 8px;
+}
+
+.report-card-timestamp {
+  font-size: 11px;
+  color: #9ca3af;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.report-card-delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.report-card-delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.report-card-delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .report-card {
+    max-width: 100%;
+  }
+
+  .report-card-header {
+    flex-wrap: wrap;
+  }
+
+  .report-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .report-card-delete-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

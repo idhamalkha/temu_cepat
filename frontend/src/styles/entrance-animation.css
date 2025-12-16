@@ -1,0 +1,182 @@
+/* Entrance Animation - Framer Motion Controlled (NO CSS ANIMATIONS) */
+
+.entrance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1a1a;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform-origin: top center;
+  will-change: transform, clip-path;
+  /* NO CSS ANIMATION - Framer Motion handles all animations */
+}
+
+.entrance-bubble-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* bubble-based animation intentionally removed; overlay now controls the valley */
+
+.entrance-bubble {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  background-color: #1a1a1a;
+  clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, clip-path;
+  /* NO ANIMATIONS - all handled by Framer Motion */
+}
+
+.entrance-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.entrance-quote-line {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.8;
+  margin: 0;
+  letter-spacing: 0.2px;
+  /* NO ANIMATIONS - Framer Motion handles text fade-in */
+}
+
+.entrance-line-1 {
+  /* NO ANIMATIONS */
+}
+
+.entrance-line-2 {
+  /* NO ANIMATIONS */
+}
+
+.entrance-author {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  margin: 1.5rem 0 0 0;
+  letter-spacing: 0.3px;
+  font-style: italic;
+  /* NO ANIMATIONS - Framer Motion handles fade-in */
+}
+
+/* Desktop */
+@media (max-width: 1024px) {
+  .entrance-quote-line {
+    font-size: 2rem;
+  }
+
+  .entrance-author {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .entrance-quote-line {
+    font-size: 1.6rem;
+    line-height: 1.7;
+  }
+
+  .entrance-author {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .entrance-content {
+    gap: 0.5rem;
+    max-width: 85%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .entrance-quote-line {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  .entrance-author {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .entrance-content {
+    gap: 0.3rem;
+    max-width: 88%;
+    padding: 0 1rem;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 360px) {
+  .entrance-quote-line {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .entrance-author {
+    font-size: 0.8rem;
+  }
+}
+
+/* Premium animation effects */
+.entrance-overlay.premium {
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+.entrance-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.entrance-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}

@@ -1,0 +1,484 @@
+/* My Laporan Page - White Warm Theme */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.my-laporan-wrapper {
+  min-height: 100vh;
+  background: #faf8f3;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.my-laporan-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(217, 119, 6, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 2px 12px rgba(120, 53, 15, 0.06);
+}
+
+.my-laporan-header-content {
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.my-laporan-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  border-radius: 10px;
+  color: #78350f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.my-laporan-back-btn:hover {
+  background: rgba(217, 119, 6, 0.15);
+  transform: translateX(-2px);
+}
+
+.my-laporan-header-text h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Main Content */
+.my-laporan-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .my-laporan-main {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-laporan-main {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-laporan-main {
+    padding: 0.75rem;
+  }
+}
+
+/* Filter Buttons */
+.my-laporan-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .my-laporan-filters {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-laporan-filters {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+}
+
+.my-laporan-filter-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.my-laporan-filter-btn.inactive {
+  background: rgba(217, 119, 6, 0.1);
+  color: #78350f;
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+.my-laporan-filter-btn.inactive:hover {
+  background: rgba(217, 119, 6, 0.15);
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+.my-laporan-filter-btn.active {
+  background: #d97706;
+  color: white;
+  border-color: #d97706;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+/* Loading State */
+.my-laporan-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.my-laporan-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.my-laporan-spinner-ring {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(217, 119, 6, 0.1);
+  border-top-color: #d97706;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.my-laporan-error {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 12px;
+  color: #7f1d1d;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Empty State */
+.my-laporan-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.my-laporan-empty-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  color: rgba(217, 119, 6, 0.2);
+}
+
+.my-laporan-empty-text {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.my-laporan-empty-cta {
+  padding: 0.75rem 1.5rem;
+  background: #d97706;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.my-laporan-empty-cta:hover {
+  background: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+/* Laporan Cards Grid */
+.my-laporan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .my-laporan-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-laporan-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-laporan-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Card Styling */
+.my-laporan-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(217, 119, 6, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(120, 53, 15, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.my-laporan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(120, 53, 15, 0.1);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+/* Card Image */
+.my-laporan-card-image {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.05), rgba(217, 119, 6, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .my-laporan-card-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-laporan-card-image {
+    height: 180px;
+  }
+}
+
+.my-laporan-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.my-laporan-card-image-placeholder {
+  color: rgba(217, 119, 6, 0.3);
+  font-size: 3rem;
+}
+
+/* Card Content */
+.my-laporan-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .my-laporan-card-content {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-laporan-card-content {
+    padding: 1rem;
+  }
+}
+
+.my-laporan-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.my-laporan-card-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #d97706;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.my-laporan-card-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(217, 119, 6, 0.05);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.my-laporan-card-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.my-laporan-card-meta-label {
+  font-weight: 600;
+  color: #78350f;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.my-laporan-card-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.my-laporan-card-status {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.my-laporan-card-status.active {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1e40af;
+}
+
+.my-laporan-card-status.done {
+  background: rgba(34, 197, 94, 0.1);
+  color: #15803d;
+}
+
+.my-laporan-card-status.deleted {
+  background: rgba(220, 38, 38, 0.1);
+  color: #7f1d1d;
+}
+
+/* Card Actions */
+.my-laporan-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(217, 119, 6, 0.1);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.my-laporan-card-action-btn {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.my-laporan-card-action-btn.done {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.my-laporan-card-action-btn.done:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.my-laporan-card-action-btn.delete {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.my-laporan-card-action-btn.delete:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.my-laporan-card-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .my-laporan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .my-laporan-header-text h1 {
+    font-size: 1.25rem;
+  }
+
+  .my-laporan-filters {
+    flex-wrap: wrap;
+  }
+
+  .my-laporan-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .my-laporan-card-secondary-actions {
+    grid-template-columns: 1fr;
+  }
+}

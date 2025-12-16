@@ -1,0 +1,20 @@
+
+  // Handler for navigation to landing section from any page
+  const handleNavigateToSection = (sectionId) => {
+    if (currentPage !== 'landing') {
+      setCurrentPage('landing');
+      // Scroll after page change
+      setTimeout(() => {
+        const element = document.getElementById(sectionId) || document.querySelector(`.${sectionId}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Already on landing, scroll immediately
+      const element = document.getElementById(sectionId) || document.querySelector(`.${sectionId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
