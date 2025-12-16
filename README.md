@@ -191,6 +191,10 @@ Dikembangkan oleh Tim Kelompok SUPER DE - Semester 5
 
 Jika Anda memiliki pertanyaan atau menemukan bug, silakan buat issue di repository ini.
 
+Preview
+![Uploading 5.png…]()
+
+
 ---
 
-**Dibuat dengan ❤️ menggunakan FastAPI dan React**
+**Dibuat dengan menggunakan FastAPI dan React**
