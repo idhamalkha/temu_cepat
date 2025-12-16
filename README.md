@@ -192,7 +192,7 @@ Dikembangkan oleh Tim Kelompok SUPER DE - Semester 5
 Jika Anda memiliki pertanyaan atau menemukan bug, silakan buat issue di repository ini.
 
 Preview
-![Uploading 5.png…]()
+<img width="1600" height="773" alt="5" src="https://github.com/user-attachments/assets/3f054dcb-5134-43c1-bab0-1881e09f2900" />
 
 
 ---
